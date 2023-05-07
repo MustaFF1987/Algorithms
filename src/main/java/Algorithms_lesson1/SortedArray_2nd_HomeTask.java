@@ -35,3 +35,4 @@ public class SortedArray_2nd_HomeTask {
         return arr[head];
     }
 }
+/* O(log n) — логарифмическая сложность */
