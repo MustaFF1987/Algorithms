@@ -14,6 +14,7 @@ public class Factorial_1st_HomeTask {
                 return n * factorial(n - 1); // рекурсивный случай
             }
         }
+    /* вычислительная сложность этого алгоритма равна O(N). */
 
     public static void main(String[] args) {
 
@@ -21,6 +22,8 @@ public class Factorial_1st_HomeTask {
         System.out.println("Факториал числа 5: " + factorial(5));
         System.out.println("Факториал числа 7: " + factorial(7));
         System.out.println("Факториал числа 10: " + factorial(10));
+
+
     }
 }
 
