@@ -8,7 +8,7 @@ package Algorithms_lesson1;
  */
 public class Factorial_1st_HomeTask {
         public static int factorial(int n) {
-            if (n == 0 || n == 1) { // базовый случай
+            if (n <= 1) { // базовый случай
                 return 1;
             } else {
                 return n * factorial(n - 1); // рекурсивный случай
@@ -22,7 +22,6 @@ public class Factorial_1st_HomeTask {
         System.out.println("Факториал числа 5: " + factorial(5));
         System.out.println("Факториал числа 7: " + factorial(7));
         System.out.println("Факториал числа 10: " + factorial(10));
-
 
     }
 }
