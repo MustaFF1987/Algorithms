@@ -1,5 +1,6 @@
 package Algorithms_lesson1;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 
 /* Дан отсортированный массив, в котором все элементы встречаются
@@ -15,6 +16,7 @@ public class SortedArray_2nd_HomeTask {
             System.out.println("Массив целых чисел: " + Arrays.toString(array));
 
             System.out.println("Не повторяющийся элемент: " + findSingleElement(array));
+
     }
     public static int findSingleElement(int[] arr) {
         // определяем начало и конец массива
@@ -34,5 +36,6 @@ public class SortedArray_2nd_HomeTask {
         }
         return arr[head];
     }
+
 }
 /* O(log n) — логарифмическая сложность */
