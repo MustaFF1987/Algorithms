@@ -11,20 +11,14 @@ public class CustomDynamicArray implements Iterable<Integer> {
     private int currentIndex;
 
 
-    public CustomDynamicArray() {
-        array = new int[1];
-        size = 1;
-        count = 0;
-    }
-
-    public CustomDynamicArray(int capacity) {
+    public CustomDynamicArray(int capacity){
         array = new int[capacity];
         size = capacity;
         count = 0;
     }
 
-    public void add(int data) {
-        if (count >= size) {
+    public void add(int data){
+        if (count >= size){
             growSize();
         }
         array[count++] = data;
@@ -35,7 +29,7 @@ public class CustomDynamicArray implements Iterable<Integer> {
         array[index] = data;
     }
 
-    public void addAt(int data, int index) {
+    public void addAt(int data, int index){
         if (index >= count) throw new ArrayIndexOutOfBoundsException();
         if (count >= size) {
             growSize();
@@ -47,19 +41,8 @@ public class CustomDynamicArray implements Iterable<Integer> {
         count++;
     }
 
-
-    private void growSize() {
-        int[] newArray = new int[size * 2];
-        for (int i = 0; i < count; i++) {
-            newArray[i] = array[i];
-        }
-        array = newArray;
-        size = newArray.length;
-    }
-
-
-    public void remove() {
-        if (count == 0) throw new ArrayIndexOutOfBoundsException("No elements present");
+    public void remove(){
+        if (count == 0) throw new RuntimeException("No elements present");
         count--;
     }
 
@@ -71,9 +54,8 @@ public class CustomDynamicArray implements Iterable<Integer> {
         count--;
     }
 
-
-    public void shrinkSize() {
-        if (count < size) {
+    public void shrinkSize(){
+        if (count < size){
             int[] newArray = new int[count];
             for (int i = 0; i < count; i++) {
                 newArray[i] = array[i];
@@ -83,24 +65,37 @@ public class CustomDynamicArray implements Iterable<Integer> {
         }
     }
 
-    private int get(int index) {
+    public int get(int index){
         if (index >= count) throw new ArrayIndexOutOfBoundsException();
         return array[index];
     }
 
-    public void clear() {
+    public void clear(){
         count = 0;
     }
 
-
-    public boolean isEmpty () {
-        return count == 0;
+    public boolean contains(int element){
+        for (int i = 0; i < count; i++) {
+            if (element == array[i]) return true;
+        }
+        return false;
     }
 
+    public boolean isEmpty(){
+        return count  == 0;
+    }
 
+    private void growSize() {
+        int[] newArray = new int[size * 2];
+        for (int i = 0; i < count; i++) {
+            newArray[i] = array[i];
+        }
+        array = newArray;
+        size = newArray.length;
+    }
 
     public static void main(String[] args) {
-        CustomDynamicArray dynamicArray = new CustomDynamicArray();
+        CustomDynamicArray dynamicArray = new CustomDynamicArray(2);
         dynamicArray.printInnerStructure();
         dynamicArray.add(1);
 //        dynamicArray.printInnerStructure();
@@ -161,6 +156,4 @@ public class CustomDynamicArray implements Iterable<Integer> {
             }
             return array[currentIndex++];
         }
-
-
 }
