@@ -147,7 +147,7 @@ public class CustomDynamicArray implements Iterable<Integer> {
     }
 
         public boolean hasNext() {
-            return currentIndex < size;
+            return currentIndex < count;
         }
 
         public int next() {
