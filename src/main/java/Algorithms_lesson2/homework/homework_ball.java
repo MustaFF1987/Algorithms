@@ -7,19 +7,23 @@ package Algorithms_lesson2.homework;
 public class homework_ball {
     public static void main(String[] args) {
 
-        int n = 8; // кол-во ступеней
+        int n = 3; // кол-во ступеней
         int count = countRoutes(n);
 
         System.out.println("Число всевозможных «маршрутов» мячика с вершины на землю: " + count);
     }
 
     public static int countRoutes(int n) {
-        if (n == 0 || n == 1) {
-                return 1;
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
         } else if (n == 2) {
-                    return 2;
-                } else {
-                    return countRoutes(n - 1) + countRoutes(n - 2) + countRoutes(n - 3);
+            return 2;
+        } else if (n == 3) {
+            return 4;
+        } else {
+            return countRoutes(n - 1) + countRoutes(n - 2) + countRoutes(n - 3);
                 }
             }
         }
