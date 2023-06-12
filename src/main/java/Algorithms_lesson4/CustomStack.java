@@ -60,8 +60,9 @@ public class CustomStack {
         libraryStack.push("A");
         libraryStack.push("B");
         libraryStack.push("C");
-        System.out.println(libraryStack.pop());
-        System.out.println(stack.search(4));
+//        System.out.println(libraryStack.pop());
+        System.out.println(stack.search(5));
+        System.out.println(libraryStack.search("C"));
 
     }
 
