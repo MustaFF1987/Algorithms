@@ -66,7 +66,7 @@ public class CustomTree {
 
         while (!queue.isEmpty()) {
             Node current = queue.poll();
-            System.out.println(current.data + " ");
+            System.out.println(current.key + " ");
 
             if (current.left != null)
                 queue.add(current.left);
@@ -98,10 +98,24 @@ public class CustomTree {
             return;
         }
 
-        System.out.print(node.data + " "); // предполагаем, что выводим значение узла
+        System.out.print(node.key + " "); // предполагаем, что выводим значение узла
 
         depthFirstSearchHelper(node.left); // рекурсивно обходим левое поддерево
         depthFirstSearchHelper(node.right); // рекурсивно обходим правое поддерево
+    }
+
+
+    public Iterable<String> keys(){
+        Queue<String> queue = new LinkedList<>();
+        inorder(root, queue);
+        return queue;
+    }
+
+    private void inorder(Node tmp, Queue<String> queue) {
+        if (tmp == null) return;
+        inorder(tmp.left, queue);
+        queue.add(tmp.key);
+        inorder(tmp.right, queue);
     }
 
 
