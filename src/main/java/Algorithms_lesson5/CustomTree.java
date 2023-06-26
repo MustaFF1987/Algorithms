@@ -13,7 +13,7 @@ public class CustomTree {
 
         String key;
         Integer value;
-        int data;
+
 
         public Node(String key, Integer value) {
             this.key = key;
@@ -49,7 +49,7 @@ public class CustomTree {
         return node;
     }
 
-/*bЭтот код реализует метод breadthFirstSearch(),
+/*Этот код реализует метод breadthFirstSearch(),
 который выполняет обход дерева по уровням, используя очередь.
 На каждой итерации извлекается узел из очереди, выводится его значение,
 а затем добавляются его левый и правый дочерние узлы в очередь (если они существуют).
@@ -99,7 +99,6 @@ public class CustomTree {
         }
 
         System.out.print(node.key + " "); // предполагаем, что выводим значение узла
-
         depthFirstSearchHelper(node.left); // рекурсивно обходим левое поддерево
         depthFirstSearchHelper(node.right); // рекурсивно обходим правое поддерево
     }
